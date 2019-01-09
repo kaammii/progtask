@@ -10,7 +10,7 @@ const { Footer, Content } = Layout;
 
 export default function App() {
   return (
-    <Layout style={{ backgroundColor: '#fff' }} >
+    <Layout style={{ backgroundColor: '#fff' }}>
       <Header />
       <Content>
         <Switch>
@@ -18,7 +18,7 @@ export default function App() {
           <Route component={NotFoundPage} />
         </Switch>
       </Content>
-      <Footer>Footer</Footer>
+      <Footer>Copyright © all rights reserved.</Footer>
     </Layout>
   );
 }
