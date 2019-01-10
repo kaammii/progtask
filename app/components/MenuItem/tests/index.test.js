@@ -1,11 +1,10 @@
-/* eslint-disable linebreak-style */
 // import React from 'react';
 // import { mount } from 'enzyme';
 // import { enzymeFind } from 'styled-components/test-utils';
 
-// import Header from '../index';
+// import MenuItem from '../index';
 
-describe('<Header />', () => {
+describe('<MenuItem />', () => {
   it('Expect to have unit tests specified', () => {
     expect(true).toEqual(false);
   });

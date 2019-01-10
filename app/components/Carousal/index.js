@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { Carousel as CarousalList } from 'react-responsive-carousel';
 import styled from 'styled-components';
@@ -7,12 +9,12 @@ const StyledCarousal = styled(CarousalList)`
   .carousel .thumb img {
     width: 100% !important;
     height: 100% !important;
-}
+  }
 
-.carousel .slide img {
+  .carousel .slide img {
     max-height: 400px;
     width: 100%;
-}
+  }
 `;
 
 function Carousal() {
