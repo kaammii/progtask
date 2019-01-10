@@ -8,6 +8,7 @@ import TopDescription from './TopDescription';
 import MenuItem from '../../components/MenuItem';
 import GuestsCard from './GuestsCard';
 import DrawerModal from '../../components/DrawerModal';
+import Map from '../../components/Map';
 import testData from './testData.json';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -18,6 +19,7 @@ class HomePage extends React.PureComponent {
       showDetail: false,
       tabs: 'overview',
       menuDetail: {},
+      showMap: false,
     };
     this.handleTabs = this.handleTabs.bind(this);
   }
@@ -35,7 +37,10 @@ class HomePage extends React.PureComponent {
         <Content>
           <Row>
             <Col span={17}>
-              <TopDescription details={testData} />
+              <TopDescription
+                details={testData}
+                onShowMap={() => this.setState({ showMap: true })}
+              />
               <Tabs>
                 <Radio.Group
                   value={this.state.tabs}
@@ -64,6 +69,13 @@ class HomePage extends React.PureComponent {
             onClose={() => this.setState({ showDetail: false })}
           >
             <DescriptionItem detail={this.state.menuDetail} />
+          </DrawerModal>
+          <DrawerModal
+            title={testData.name}
+            showDetail={this.state.showMap}
+            onClose={() => this.setState({ showMap: false })}
+          >
+            <Map />
           </DrawerModal>
         </Content>
       </div>

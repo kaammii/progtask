@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import TopDescr from './styles';
 
-function TopDescription({ details }) {
+function TopDescription({ details, onShowMap }) {
   return (
     <TopDescr>
       <div className="topdescr">
@@ -13,7 +13,14 @@ function TopDescription({ details }) {
         <Rate disabled defaultValue={4} />
         <p className="address">
           {details.address.street}, {details.address.city}{' '}
-          <span>Show on map</span>
+          <span
+            onClick={onShowMap}
+            onKeyUp={onShowMap}
+            role="button"
+            tabIndex="0"
+          >
+            Show on map
+          </span>
         </p>
         <p className="phone">
           <Icon type="phone" />
@@ -26,6 +33,7 @@ function TopDescription({ details }) {
 
 TopDescription.propTypes = {
   details: PropTypes.object.isRequired,
+  onShowMap: PropTypes.func,
 };
 
 export default TopDescription;
