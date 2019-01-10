@@ -11,10 +11,14 @@ function GuestsCard() {
     <Card>
       <NumOfGuest>
         <h3>Guests</h3>
-        <Select defaultValue="lucy" size="large" className="selectNumOfGuest">
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
-          <Option value="Yiminghe">yiminghe</Option>
+        <Select
+          defaultValue="200-250"
+          size="large"
+          className="selectNumOfGuest"
+        >
+          <Option value="200-250">200-250</Option>
+          <Option value="250-300">250-300</Option>
+          <Option value="300-350">300-350</Option>
         </Select>
       </NumOfGuest>
       <DateContainer>

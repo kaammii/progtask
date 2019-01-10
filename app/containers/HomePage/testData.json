@@ -1,0 +1,112 @@
+{
+  "id": 6,
+  "name": "Clarion",
+  "address": {
+    "street": "Denmarkgatan 11",
+    "city": "Stockholm",
+    "province": "Stockhom lan",
+    "postalCode": "16445"
+  },
+  "contactInfo": {
+    "phoneNumber": "085566788",
+    "mobileNumber": "074567839",
+    "email": "info@clarion.se"
+  },
+  "details": {
+    "aboutUs": "Calrion Catering Services",
+    "services": [
+      "Free Home Delivery"
+    ],
+    "menus": [
+      {
+        "id": 1,
+        "name": "menu 1",
+        "basePrice": 1400,
+        "starters": [
+          {
+            "name": "Mix sallad",
+            "desc": "fresh mix vegetable sallad"
+          }
+        ],
+        "mainCourses": [
+          {
+            "name": "Mutton Karahi",
+            "desc": "Madrasi style mutton karahi"
+          },
+          {
+            "name": "Chicken Korma",
+            "desc": "White chicken korma"
+          }
+        ],
+        "deserts": [
+          {
+            "name": "Gajar Halwa",
+            "desc": "halwa made from carrots and kohoya"
+          }
+        ],
+        "sideDishes": [
+          {
+            "name": "Non-bread",
+            "desc": "Live non-bread"
+          },
+          {
+            "name": "Plai rice",
+            "desc": "plain basmati rice"
+          }
+        ],
+        "drinks": [
+          "MINIRAL_WATER",
+          "COLA",
+          "SPRITE"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "menu 2",
+        "basePrice": 1600,
+        "starters": [
+          {
+            "name": "Russian Sallad",
+            "desc": "fresh russian sallad"
+          }
+        ],
+        "mainCourses": [
+          {
+            "name": "Mutton nihari",
+            "desc": "Hydrabadi style mutton nihari"
+          },
+          {
+            "name": "Palak Chicken",
+            "desc": "fresh baby spenat cooked with yummy chicken"
+          }
+        ],
+        "deserts": [
+          {
+            "name": "Gajar Halwa",
+            "desc": "halwa made from carrots and kohoya"
+          }
+        ],
+        "sideDishes": [
+          {
+            "name": "Non-bread",
+            "desc": "Live non-bread"
+          },
+          {
+            "name": "Plain rice",
+            "desc": "plain basmati rice with peas"
+          }
+        ],
+        "drinks": [
+          "MINIRAL_WATER",
+          "COLA",
+          "JUICES"
+        ]
+      }
+    ],
+    "pictureUrls": [
+      "http://myhost.pic1.jpg",
+      "http://myhost.pic2.jpg",
+      "http://myhost.pic3.jpg"
+    ]
+  }
+}

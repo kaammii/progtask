@@ -5,22 +5,27 @@ import { Link } from 'react-router-dom';
 
 import TopDescr from './styles';
 
-function TopDescription() {
+function TopDescription({ details }) {
   return (
     <TopDescr>
       <div className="topdescr">
-        <Link to="/">Clarion</Link>
+        <Link to="/">{details.name}</Link>
         <Rate disabled defaultValue={4} />
         <p className="address">
-          Denmarkgatan 12, Stockholm <span>Show on map</span>
+          {details.address.street}, {details.address.city}{' '}
+          <span>Show on map</span>
         </p>
         <p className="phone">
           <Icon type="phone" />
-          <span>07-1234567</span>
+          <span>{details.contactInfo.phoneNumber}</span>
         </p>
       </div>
     </TopDescr>
   );
 }
+
+TopDescription.propTypes = {
+  details: PropTypes.object.isRequired,
+};
 
 export default TopDescription;

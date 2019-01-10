@@ -8,7 +8,7 @@ import TopDescription from './TopDescription';
 import MenuItem from '../../components/MenuItem';
 import GuestsCard from './GuestsCard';
 import DrawerModal from '../../components/DrawerModal';
-
+import testData from './testData.json';
 
 /* eslint-disable react/prefer-stateless-function */
 class HomePage extends React.PureComponent {
@@ -17,6 +17,7 @@ class HomePage extends React.PureComponent {
     this.state = {
       showDetail: false,
       tabs: 'overview',
+      menuDetail: {},
     };
     this.handleTabs = this.handleTabs.bind(this);
   }
@@ -28,27 +29,13 @@ class HomePage extends React.PureComponent {
   }
 
   render() {
-    const listData = [];
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < 5; i++) {
-      listData.push({
-        href: 'http://ant.design',
-        title: `Menu ${i}`,
-        avatar:
-          'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-        description:
-          'Ant Design, a design language for background applications, is refined by Ant UED Team.',
-        content: '2Starters + 3Main Courses + 2Deserts  + 3Drinks + 1SideDish',
-      });
-    }
-
     return (
       <div>
         <Carousal />
         <Content>
           <Row>
             <Col span={17}>
-              <TopDescription />
+              <TopDescription details={testData} />
               <Tabs>
                 <Radio.Group
                   value={this.state.tabs}
@@ -60,8 +47,10 @@ class HomePage extends React.PureComponent {
                 </Radio.Group>
               </Tabs>
               <MenuItem
-                listData={listData}
-                onViewMenu={() => this.setState({ showDetail: true })}
+                listData={testData.details.menus}
+                onViewMenu={detail =>
+                  this.setState({ showDetail: true, menuDetail: detail })
+                }
               />
             </Col>
             <Col span={1} />
@@ -70,13 +59,11 @@ class HomePage extends React.PureComponent {
             </Col>
           </Row>
           <DrawerModal
+            title={this.state.menuDetail.name || ''}
             showDetail={this.state.showDetail}
-            onClose={this.setState({ showDetail: false })}
+            onClose={() => this.setState({ showDetail: false })}
           >
-            <DescriptionItem
-              title="Chickn Curry"
-              content="fresh mix vegetable sallad"
-            />
+            <DescriptionItem detail={this.state.menuDetail} />
           </DrawerModal>
         </Content>
       </div>

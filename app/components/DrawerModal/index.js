@@ -4,10 +4,10 @@ import { Button } from 'antd';
 
 import { StyledDrawer, Footer } from './styles';
 
-function DrawerModal({ children, onClose, showDetail }) {
+function DrawerModal({ title, children, onClose, showDetail }) {
   return (
     <StyledDrawer
-      title="Menu 1 Detail"
+      title={title}
       width={720}
       onClose={onClose}
       visible={showDetail}
@@ -29,6 +29,7 @@ DrawerModal.propTypes = {
   ]).isRequired,
   showDetail: PropTypes.bool,
   onClose: PropTypes.func,
+  title: PropTypes.string,
 };
 
 export default DrawerModal;

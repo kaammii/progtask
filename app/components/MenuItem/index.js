@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { List, Button } from 'antd';
 import { MenuPrice, ItemTitle } from './styles';
 
-const Side = () => (
+const Side = ({ price }) => (
   <MenuPrice>
     <div>
-      <p>800 PKR</p>
+      <p>{price} PKR</p>
       <p>PER PERSON</p>
     </div>
     <Button type="primary" block>
@@ -14,6 +14,10 @@ const Side = () => (
     </Button>
   </MenuPrice>
 );
+
+Side.propTypes = {
+  price: PropTypes.number.isRequired,
+};
 
 function MenuItem({ listData, onViewMenu }) {
   return (
@@ -26,16 +30,21 @@ function MenuItem({ listData, onViewMenu }) {
       dataSource={listData}
       renderItem={item => (
         <List.Item
-          key={item.title}
+          key={item.id}
           actions={[
-            <Button type="primary" onClick={onViewMenu}>
+            <Button type="primary" onClick={() => onViewMenu(item)}>
               View Menu
             </Button>,
           ]}
-          extra={<Side />}
+          extra={<Side price={item.basePrice} />}
         >
-          <List.Item.Meta title={<ItemTitle>{item.title}</ItemTitle>} />
-          {item.content}
+          <List.Item.Meta title={<ItemTitle>{item.name}</ItemTitle>} />
+          {item.deserts.length}
+          Deserts + {item.drinks.length}
+          Drinks + {item.mainCourses.length}
+          Main Courses + {item.sideDishes.length}
+          Side Dishes + {item.starters.length}
+          Starters
         </List.Item>
       )}
     />
