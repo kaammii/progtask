@@ -18,9 +18,9 @@ class GuestsCard extends React.PureComponent {
     this.handleEatingTime = this.handleEatingTime.bind(this);
   }
 
-  handleGuests(e) {
+  handleGuests(numOfGuest) {
     this.setState({
-      numOfGuest: e,
+      numOfGuest,
     });
   }
 

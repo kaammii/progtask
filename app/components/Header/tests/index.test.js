@@ -1,12 +1,11 @@
-/* eslint-disable linebreak-style */
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import Header from '../index';
+import Header from '../index';
 
 describe('<Header />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render', () => {
+    const wrapper = shallow(<Header />);
+    expect(wrapper);
   });
 });

@@ -21,7 +21,7 @@ DrawerModal.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
-  ]).isRequired,
+  ]),
   showDetail: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.string,
