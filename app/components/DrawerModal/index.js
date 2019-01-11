@@ -6,12 +6,7 @@ import { StyledDrawer, Footer } from './styles';
 
 function DrawerModal({ title, children, onClose, showDetail }) {
   return (
-    <StyledDrawer
-      title={title}
-      width={720}
-      onClose={onClose}
-      visible={showDetail}
-    >
+    <StyledDrawer title={title} onClose={onClose} visible={showDetail}>
       {children}
       <Footer>
         <Button onClick={onClose} style={{ marginRight: 8 }}>
