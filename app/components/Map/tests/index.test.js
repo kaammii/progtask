@@ -1,11 +1,11 @@
-// import React from 'react';
-// import { mount } from 'enzyme';
-// import { enzymeFind } from 'styled-components/test-utils';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import Map from '../index';
+import Map from '../index';
 
 describe('<Map />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('should render', () => {
+    const wrapper = shallow(<Map />);
+    expect(wrapper);
   });
 });

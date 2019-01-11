@@ -36,7 +36,7 @@ class HomePage extends React.PureComponent {
         <Carousal />
         <Content>
           <Row>
-            <Col span={17}>
+            <Col xs={24} sm={24} md={16} lg={16} xl={16}>
               <TopDescription
                 details={testData}
                 onShowMap={() => this.setState({ showMap: true })}
@@ -58,8 +58,13 @@ class HomePage extends React.PureComponent {
                 }
               />
             </Col>
-            <Col span={1} />
-            <Col span={6}>
+            <Col
+              xs={24}
+              sm={24}
+              md={{ span: 6, offset: 1 }}
+              lg={{ span: 6, offset: 1 }}
+              xl={{ span: 6, offset: 1 }}
+            >
               <GuestsCard />
             </Col>
           </Row>
